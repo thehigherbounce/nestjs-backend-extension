@@ -5,7 +5,8 @@ import fetch from 'node-fetch';
 export class OpenaiService {
   async fetchSummary(text: string): Promise<string> {
     // Replace this URL with the OpenAI API URL.
-    const openaiApiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+    const model = 'text-davinci-003';
+    const openaiApiUrl = `https://api.openai.com/v1/engines/${model}/completions`;
 
     // Replace this with your OpenAI API key.
     const openaiApiKey = process.env.OPENAI_API_KEY;
